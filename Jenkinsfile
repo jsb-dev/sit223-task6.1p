@@ -1,18 +1,15 @@
 pipeline {
     agent any
 
+    // Define the environment variables for each environment
     environment {
         DIRECTORY_PATH = "./src"
         TESTING_ENVIRONMENT = "./environments/staging"
         PRODUCTION_ENVIRONMENT = "./environments/production"
     }
 
+    // Define each of the pipeline stages
     stages {
-        stage('Load Environment Variables') {
-            steps {
-                echo "Environment variables loaded."
-            }
-        }
 
         stage('Build') {
             steps {
@@ -42,7 +39,8 @@ pipeline {
 
         stage('Approval') {
             steps {
-                echo "Waiting for manual approval (simulated)..."
+                echo "Waiting for manual approval..."
+                // 10 second pause for demonstration purposes
                 sleep time: 10, unit: 'SECONDS'
             }
         }

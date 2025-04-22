@@ -4,7 +4,7 @@ This is my submission for running a basic Jenkins script to demonstrate simulate
 
 ## `environments`
 
-Directories for pipeline environments, held locally for this example.
+Directories for fetching resources of different pipeline environments.
 
 - `production`
 
@@ -13,10 +13,6 @@ Directories for pipeline environments, held locally for this example.
 ## `src`
 
 The application codebase
-
-## `env.properties`
-
-This is a properties file for storing the env variables (similar to .env). These are read in by Jenkins to determine the environment location for each stage. For this demonstration, I've made local directories that might otherwise hold containerised deployments for the different stages (for consistent tesitng).
 
 ## `Jenkinsfile`
 
