@@ -2,19 +2,15 @@ pipeline {
     agent any
 
     environment {
-        ENV_FILE = 'env.properties'
+        DIRECTORY_PATH = "./src"
+        TESTING_ENVIRONMENT = "./environments/staging"
+        PRODUCTION_ENVIRONMENT = "./environments/production"
     }
 
     stages {
         stage('Load Environment Variables') {
             steps {
-                script {
-                    def props = readProperties file: "${ENV_FILE}"
-                    env.DIRECTORY_PATH = props['DIRECTORY_PATH']
-                    env.TESTING_ENVIRONMENT = props['TESTING_ENVIRONMENT']
-                    env.PRODUCTION_ENVIRONMENT = props['PRODUCTION_ENVIRONMENT']
-                }
-                echo "Loaded environment variables from ${ENV_FILE}"
+                echo "Environment variables loaded."
             }
         }
 
